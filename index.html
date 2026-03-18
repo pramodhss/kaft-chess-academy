@@ -149,7 +149,6 @@
       height: 72px;
     }
 
-    /* ── LOGO IMAGE ── */
     .nav-logo {
       display: flex;
       align-items: center;
@@ -269,7 +268,6 @@
 
     .hero-content { position: relative; z-index: 1; max-width: 820px; }
 
-    /* Hero logo image */
     .hero-logo-img {
       width: 110px;
       height: 110px;
@@ -435,7 +433,6 @@
       justify-content: center;
     }
 
-    /* About board — show logo image instead of chess symbol */
     .about-board-logo {
       width: 55%;
       height: 55%;
@@ -637,8 +634,86 @@
     }
     .player-wins b { color: var(--gold); font-weight: 600; }
 
+    /* ── COACHES ── */
+    #coaches { background: var(--black); }
+
+    .coaches-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .coach-card {
+      background: var(--dark2);
+      border: 1px solid rgba(212,175,55,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .coach-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+    .coach-img-box {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: var(--dark3);
+      position: relative;
+      overflow: hidden;
+    }
+    /* Placeholder behavior for images */
+    .coach-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) contrast(1.1);
+      transition: 0.5s;
+    }
+    .coach-card:hover .coach-img-box img {
+      filter: grayscale(0%) contrast(1);
+      transform: scale(1.05);
+    }
+    .coach-info {
+      padding: 24px;
+      text-align: center;
+    }
+    .coach-info h3 {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .coach-title {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-wider);
+      display: block;
+      margin-bottom: 16px;
+    }
+    .coach-bio {
+      font-family: var(--font-accent);
+      font-size: var(--text-sm);
+      font-style: italic;
+      color: var(--gray-light);
+      line-height: var(--lh-relaxed);
+    }
+    .coach-socials {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .coach-socials a {
+      color: var(--gold-muted);
+      font-size: 0.9rem;
+      transition: 0.3s;
+    }
+    .coach-socials a:hover { color: var(--gold-light); }
+
     /* ── PROGRAMS ── */
-    #programs { background: var(--black); }
+    #programs { background: var(--dark2); }
 
     .programs-grid {
       display: grid;
@@ -646,7 +721,7 @@
       gap: 26px;
     }
     .program-card {
-      background: var(--dark2);
+      background: var(--dark3);
       border: 1px solid rgba(212,175,55,0.1);
       border-radius: 6px;
       padding: 38px 30px;
@@ -706,7 +781,7 @@
     }
 
     /* ── TESTIMONIALS ── */
-    #testimonials { background: var(--dark2); }
+    #testimonials { background: var(--black); }
 
     .testimonials-grid {
       display: grid;
@@ -714,7 +789,7 @@
       gap: 26px;
     }
     .testimonial-card {
-      background: var(--dark3);
+      background: var(--dark2);
       border: 1px solid rgba(212,175,55,0.1);
       border-radius: 6px;
       padding: 34px 28px;
@@ -787,7 +862,7 @@
     }
 
     /* ── CONTACT ── */
-    #contact { background: var(--black); }
+    #contact { background: var(--dark2); }
 
     .contact-grid {
       display: grid;
@@ -877,7 +952,7 @@
 
     /* FORM */
     .contact-form {
-      background: var(--dark2);
+      background: var(--dark3);
       border: 1px solid rgba(212,175,55,0.13);
       border-radius: 6px;
       padding: 42px;
@@ -909,7 +984,7 @@
     .form-group select,
     .form-group textarea {
       width: 100%;
-      background: var(--dark3);
+      background: var(--dark);
       border: 1px solid rgba(212,175,55,0.18);
       border-radius: 4px;
       padding: 12px 16px;
@@ -972,7 +1047,7 @@
 
     /* ── FOOTER ── */
     footer {
-      background: var(--dark2);
+      background: var(--black);
       border-top: 1px solid rgba(212,175,55,0.13);
       padding: 64px 20px 30px;
     }
@@ -983,7 +1058,6 @@
       margin-bottom: 54px;
     }
 
-    /* ── FOOTER LOGO ── */
     .footer-logo {
       display: flex;
       align-items: center;
@@ -1156,7 +1230,6 @@
 </head>
 <body>
 
-  <!-- ============ NAVBAR ============ -->
   <nav>
     <a href="#hero" class="nav-logo">
       <img src="logo.png" alt="KAFT Chess Academy Logo" class="nav-logo-img"/>
@@ -1170,7 +1243,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#achievements">Achievements</a></li>
       <li><a href="#players">Players</a></li>
-      <li><a href="#programs">Programs</a></li>
+      <li><a href="#coaches">Coaches</a></li> <li><a href="#programs">Programs</a></li>
       <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#contact" class="nav-cta">Contact Us</a></li>
     </ul>
@@ -1179,7 +1252,6 @@
     </button>
   </nav>
 
-  <!-- ============ HERO ============ -->
   <section id="hero">
     <span class="chess-piece-float cp1">♜</span>
     <span class="chess-piece-float cp2">♞</span>
@@ -1187,9 +1259,7 @@
     <span class="chess-piece-float cp4">♛</span>
 
     <div class="hero-content">
-      <!-- Logo in Hero -->
       <img src="logo.png" alt="KAFT Chess Academy" class="hero-logo-img"/>
-
       <span class="hero-badge">♟ &nbsp; Where Champions Are Made</span>
       <h1 class="hero-title">KAFT</h1>
       <span class="hero-title-sub">Chess Academy</span>
@@ -1222,13 +1292,11 @@
     </div>
   </section>
 
-  <!-- ============ ABOUT ============ -->
   <section class="section" id="about">
     <div class="container">
       <div class="about-grid">
         <div class="about-visual fade-up">
           <div class="about-board">
-            <!-- Logo shown on chess board -->
             <img src="logo.png" alt="KAFT Logo" class="about-board-logo"/>
           </div>
           <div class="about-badge-box">
@@ -1260,7 +1328,6 @@
     </div>
   </section>
 
-  <!-- ============ ACHIEVEMENTS ============ -->
   <section class="section" id="achievements">
     <div class="container">
       <div class="section-title fade-up">
@@ -1269,54 +1336,46 @@
         <div class="gold-line"></div>
       </div>
       <div class="achievements-grid">
-
         <div class="achievement-card fade-up">
           <span class="ach-icon">🏆</span>
           <span class="ach-year">2023</span>
           <h3>National Junior Championship</h3>
           <p>First place at the National Junior Chess Championship held in Lagos with 3 KAFT students in the top 5.</p>
         </div>
-
         <div class="achievement-card fade-up">
           <span class="ach-icon">🥇</span>
           <span class="ach-year">2022</span>
           <h3>Regional Open Title</h3>
           <p>Swept the Regional Open with gold, silver, and bronze medals in the Under-18 category.</p>
         </div>
-
         <div class="achievement-card fade-up">
           <span class="ach-icon">🌍</span>
           <span class="ach-year">2022</span>
           <h3>International Representation</h3>
           <p>Two KAFT players represented the country at the African Youth Chess Championship in Accra.</p>
         </div>
-
         <div class="achievement-card fade-up">
           <span class="ach-icon">👑</span>
           <span class="ach-year">2021</span>
           <h3>Academy of the Year Award</h3>
           <p>Recognized as the Best Chess Academy of the Year by the National Chess Federation.</p>
         </div>
-
         <div class="achievement-card fade-up">
           <span class="ach-icon">⭐</span>
           <span class="ach-year">2022</span>
           <h3>500 Students Milestone</h3>
           <p>Celebrated the training of our 500th student — a landmark in our journey of excellence.</p>
         </div>
-
         <div class="achievement-card fade-up">
           <span class="ach-icon">🎖️</span>
           <span class="ach-year">2023</span>
           <h3>State Schools Championship</h3>
           <p>KAFT students won 7 out of 10 medals at the State Inter-School Chess Championships.</p>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ============ PLAYERS ============ -->
   <section class="section" id="players">
     <div class="container">
       <div class="section-title fade-up">
@@ -1325,7 +1384,6 @@
         <div class="gold-line"></div>
       </div>
       <div class="players-grid">
-
         <div class="player-card fade-up">
           <div class="player-avatar">AM</div>
           <h3>Ahmed Mustafa</h3>
@@ -1333,7 +1391,6 @@
           <span class="player-title">FIDE Master</span>
           <p class="player-wins">Tournament wins: <b>24</b></p>
         </div>
-
         <div class="player-card fade-up">
           <div class="player-avatar">SK</div>
           <h3>Sofia Kalu</h3>
@@ -1341,7 +1398,6 @@
           <span class="player-title">National Champion</span>
           <p class="player-wins">Tournament wins: <b>18</b></p>
         </div>
-
         <div class="player-card fade-up">
           <div class="player-avatar">JO</div>
           <h3>James Okafor</h3>
@@ -1349,7 +1405,6 @@
           <span class="player-title">Candidate Master</span>
           <p class="player-wins">Tournament wins: <b>15</b></p>
         </div>
-
         <div class="player-card fade-up">
           <div class="player-avatar">LA</div>
           <h3>Layla Adeyemi</h3>
@@ -1357,7 +1412,6 @@
           <span class="player-title">Women's Master</span>
           <p class="player-wins">Tournament wins: <b>20</b></p>
         </div>
-
         <div class="player-card fade-up">
           <div class="player-avatar">DB</div>
           <h3>Daniel Bello</h3>
@@ -1365,7 +1419,6 @@
           <span class="player-title">Rising Star</span>
           <p class="player-wins">Tournament wins: <b>11</b></p>
         </div>
-
         <div class="player-card fade-up">
           <div class="player-avatar">NI</div>
           <h3>Nadia Ibrahim</h3>
@@ -1373,12 +1426,67 @@
           <span class="player-title">Junior Champion</span>
           <p class="player-wins">Tournament wins: <b>13</b></p>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ============ PROGRAMS ============ -->
+  <section id="coaches" class="section">
+    <div class="container">
+      <div class="section-title fade-up">
+        <h2>Elite Mentors</h2>
+        <p>Learn from international champions and dedicated strategists.</p>
+        <div class="gold-line"></div>
+      </div>
+
+      <div class="coaches-grid">
+        <div class="coach-card fade-up">
+          <div class="coach-img-box">
+            <img src="coach1.jpg" alt="Alexander Knight">
+          </div>
+          <div class="coach-info">
+            <span class="coach-title">Grandmaster / Head Coach</span>
+            <h3>Alexander Knight</h3>
+            <p class="coach-bio">Specializing in endgame theory and psychological resilience under pressure.</p>
+            <div class="coach-socials">
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="coach-card fade-up">
+          <div class="coach-img-box">
+            <img src="coach2.jpg" alt="Elena Voronin">
+          </div>
+          <div class="coach-info">
+            <span class="coach-title">International Master</span>
+            <h3>Elena Voronin</h3>
+            <p class="coach-bio">Expert in modern opening theory and tactical calculation patterns.</p>
+            <div class="coach-socials">
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="coach-card fade-up">
+          <div class="coach-img-box">
+            <img src="coach3.jpg" alt="Marcus Sterling">
+          </div>
+          <div class="coach-info">
+            <span class="coach-title">FIDE Trainer</span>
+            <h3>Marcus Sterling</h3>
+            <p class="coach-bio">Dedicated to youth development and building solid positional foundations.</p>
+            <div class="coach-socials">
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="programs">
     <div class="container">
       <div class="section-title fade-up">
@@ -1387,7 +1495,6 @@
         <div class="gold-line"></div>
       </div>
       <div class="programs-grid">
-
         <div class="program-card fade-up">
           <span class="program-level">Beginner</span>
           <h3>Foundation Course</h3>
@@ -1399,7 +1506,6 @@
             <li>6-week program</li>
           </ul>
         </div>
-
         <div class="program-card fade-up">
           <span class="program-level">Intermediate</span>
           <h3>Competitive Training</h3>
@@ -1411,7 +1517,6 @@
             <li>12-week program</li>
           </ul>
         </div>
-
         <div class="program-card fade-up">
           <span class="program-level">Advanced</span>
           <h3>Elite Mastery</h3>
@@ -1423,12 +1528,10 @@
             <li>Ongoing coaching</li>
           </ul>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ============ TESTIMONIALS ============ -->
   <section class="section" id="testimonials">
     <div class="container">
       <div class="section-title fade-up">
@@ -1437,15 +1540,10 @@
         <div class="gold-line"></div>
       </div>
       <div class="testimonials-grid">
-
         <div class="testimonial-card fade-up">
           <span class="quote-icon">"</span>
           <div class="stars">★★★★★</div>
-          <p class="testimonial-text">
-            "KAFT Chess Academy completely transformed my son's thinking. In just 6 months,
-            he went from a casual player to winning his first regional tournament. The coaches
-            here are world-class."
-          </p>
+          <p class="testimonial-text">"KAFT Chess Academy completely transformed my son's thinking. In just 6 months, he went from a casual player to winning his first regional tournament."</p>
           <div class="testimonial-author">
             <div class="author-avatar">MO</div>
             <div class="author-info">
@@ -1454,14 +1552,10 @@
             </div>
           </div>
         </div>
-
         <div class="testimonial-card fade-up">
           <span class="quote-icon">"</span>
           <div class="stars">★★★★★</div>
-          <p class="testimonial-text">
-            "I joined KAFT at age 14 with no rating and within two years I had my FIDE title.
-            The structured training, the coaches, and the community here are truly exceptional."
-          </p>
+          <p class="testimonial-text">"I joined KAFT at age 14 with no rating and within two years I had my FIDE title. The community here is truly exceptional."</p>
           <div class="testimonial-author">
             <div class="author-avatar">TK</div>
             <div class="author-info">
@@ -1470,14 +1564,10 @@
             </div>
           </div>
         </div>
-
         <div class="testimonial-card fade-up">
           <span class="quote-icon">"</span>
           <div class="stars">★★★★★</div>
-          <p class="testimonial-text">
-            "As a parent, I love how chess has improved my daughter's concentration and
-            discipline. KAFT Academy doesn't just teach chess — they build character."
-          </p>
+          <p class="testimonial-text">"As a parent, I love how chess has improved my daughter's concentration. KAFT Academy doesn't just teach chess — they build character."</p>
           <div class="testimonial-author">
             <div class="author-avatar">RA</div>
             <div class="author-info">
@@ -1486,61 +1576,10 @@
             </div>
           </div>
         </div>
-
-        <div class="testimonial-card fade-up">
-          <span class="quote-icon">"</span>
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">
-            "The elite coaching program at KAFT is unlike anything I've experienced. My game
-            improved by over 300 ELO points in one year. Highly recommend to any serious player."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar">AM</div>
-            <div class="author-info">
-              <h4>Ahmed Mustafa</h4>
-              <span>FIDE Master, KAFT Alumni</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card fade-up">
-          <span class="quote-icon">"</span>
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">
-            "From the very first class my 8-year-old was engaged and excited. The foundation
-            program is perfectly paced for young learners. Worth every kobo!"
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar">FC</div>
-            <div class="author-info">
-              <h4>Mrs. Funmi Coker</h4>
-              <span>Parent of Student</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card fade-up">
-          <span class="quote-icon">"</span>
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">
-            "Competing at the African Youth Championship was a dream come true. KAFT's
-            preparation program gave me the confidence and skill to hold my own on the
-            international stage."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar">SK</div>
-            <div class="author-info">
-              <h4>Sofia Kalu</h4>
-              <span>African Championship Participant</span>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ============ CONTACT ============ -->
   <section class="section" id="contact">
     <div class="container">
       <div class="section-title fade-up">
@@ -1549,20 +1588,16 @@
         <div class="gold-line"></div>
       </div>
       <div class="contact-grid">
-
         <div class="contact-info fade-up">
           <h3>Contact Information</h3>
           <p>Whether you have a question about programs, pricing, or enrollment — we're here to help.</p>
-
           <div class="contact-item">
             <div class="ci-icon"><i class="fas fa-phone"></i></div>
             <div class="ci-text">
               <h4>Phone Number</h4>
               <p><a href="tel:+2348012345678">+234 801 234 5678</a></p>
-              <p><a href="tel:+2348098765432">+234 809 876 5432</a></p>
             </div>
           </div>
-
           <div class="contact-item">
             <div class="ci-icon"><i class="fas fa-envelope"></i></div>
             <div class="ci-text">
@@ -1570,7 +1605,6 @@
               <p><a href="mailto:info@KAFTchess.com">info@KAFTchess.com</a></p>
             </div>
           </div>
-
           <div class="contact-item">
             <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
             <div class="ci-text">
@@ -1578,26 +1612,17 @@
               <p>14 Grand Knight Avenue,<br/>Victoria Island, Lagos</p>
             </div>
           </div>
-
-          <div class="contact-item">
-            <div class="ci-icon"><i class="fas fa-clock"></i></div>
-            <div class="ci-text">
-              <h4>Opening Hours</h4>
-              <p>Sat & Sun: 10:00 AM – 8:00 PM</p>
-            </div>
-          </div>
-
           <div class="social-links">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
 
         <div class="contact-form fade-up">
           <h3>Send Us a Message ♟</h3>
-          <form id="contactForm" novalidate>
+          <form id="contactForm">
             <div class="form-row">
               <div class="form-group">
                 <label for="fname">First Name *</label>
@@ -1608,96 +1633,57 @@
                 <input type="text" id="lname" placeholder="Doe" required/>
               </div>
             </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="email">Email Address *</label>
-                <input type="email" id="email" placeholder="you@example.com" required/>
-              </div>
-              <div class="form-group">
-                <label for="phone">Phone Number *</label>
-                <input type="tel" id="phone" placeholder="+234 800 000 0000" required/>
-              </div>
-            </div>
             <div class="form-group">
-              <label for="program">Program of Interest</label>
-              <select id="program">
-                <option value="">Select a program...</option>
-                <option value="foundation">Foundation Course (Beginner)</option>
-                <option value="competitive">Competitive Training (Intermediate)</option>
-                <option value="elite">Elite Mastery (Advanced)</option>
-                <option value="other">General Inquiry</option>
-              </select>
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" placeholder="you@example.com" required/>
             </div>
             <div class="form-group">
               <label for="message">Your Message *</label>
-              <textarea id="message" placeholder="Tell us about yourself or ask any question..." required></textarea>
+              <textarea id="message" placeholder="Tell us about yourself..." required></textarea>
             </div>
-            <button type="submit" class="btn-submit">
-              <i class="fas fa-paper-plane"></i> &nbsp; Send Message
-            </button>
-            <div class="form-success" id="formSuccess">
-              ♔ &nbsp; Thank you! Your message has been sent. We'll be in touch within 24 hours.
-            </div>
+            <button type="submit" class="btn-submit">Send Message</button>
+            <div class="form-success" id="formSuccess">♔ &nbsp; Message sent successfully!</div>
           </form>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ============ FOOTER ============ -->
   <footer>
     <div class="container">
       <div class="footer-grid">
-
         <div class="footer-brand">
           <div class="footer-logo">
             <img src="logo.png" alt="KAFT Chess Academy" class="footer-logo-img"/>
             <span class="logo-text"><em>KAFT</em> Chess Academy</span>
           </div>
-          <p>Where champions are made. Developing strategic minds and world-class chess players since 2021.</p>
-          <div class="social-links" style="margin-top:20px">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-          </div>
+          <p>Where champions are made. Developing strategic minds since 2021.</p>
         </div>
-
         <div class="footer-col">
           <h4>Quick Links</h4>
           <ul>
             <li><a href="#about">About Us</a></li>
-            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#coaches">Our Coaches</a></li>
             <li><a href="#players">Our Players</a></li>
             <li><a href="#programs">Programs</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#contact">Enrollment</a></li>
+            <li><a href="#contact">FAQs</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
-
-        <div class="footer-col">
-          <h4>Programs</h4>
-          <ul>
-            <li><a href="#programs">Foundation Course</a></li>
-            <li><a href="#programs">Competitive Training</a></li>
-            <li><a href="#programs">Elite Mastery</a></li>
-            <li><a href="#contact">Private Coaching</a></li>
-            <li><a href="#contact">School Programs</a></li>
-          </ul>
-        </div>
-
         <div class="footer-col">
           <h4>Newsletter</h4>
-          <p>Get chess tips and academy news delivered to your inbox.</p>
           <div class="footer-newsletter">
-            <input type="email" placeholder="Your email address"/>
-            <button type="button">Subscribe</button>
+            <input type="email" placeholder="Your email"/>
+            <button type="button">Join</button>
           </div>
         </div>
-
       </div>
-
       <div class="footer-bottom">
         <p>© 2024 <span>KAFT Chess Academy</span>. All rights reserved.</p>
         <p>Made with <span>♔</span> for the love of chess</p>
@@ -1705,12 +1691,8 @@
     </div>
   </footer>
 
-  <!-- Back to Top -->
-  <button id="backTop" aria-label="Back to top">
-    <i class="fas fa-chevron-up"></i>
-  </button>
+  <button id="backTop"><i class="fas fa-chevron-up"></i></button>
 
-  <!-- ============ JAVASCRIPT ============ -->
   <script>
     const hamburger = document.getElementById('hamburger');
     const navLinks  = document.getElementById('navLinks');
@@ -1730,11 +1712,11 @@
     const counterObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const el     = entry.target;
+          const el = entry.target;
           const target = parseInt(el.dataset.count);
-          let current  = 0;
-          const step   = Math.ceil(target / 60);
-          const timer  = setInterval(() => {
+          let current = 0;
+          const step = Math.ceil(target / 60);
+          const timer = setInterval(() => {
             current += step;
             if (current >= target) { current = target; clearInterval(timer); }
             el.textContent = current + (target >= 100 ? '+' : '');
@@ -1747,38 +1729,13 @@
 
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      const fname   = document.getElementById('fname').value.trim();
-      const email   = document.getElementById('email').value.trim();
-      const phone   = document.getElementById('phone').value.trim();
-      const message = document.getElementById('message').value.trim();
-      if (!fname || !email || !phone || !message) {
-        alert('Please fill in all required fields.');
-        return;
-      }
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address.');
-        return;
-      }
       const btn = this.querySelector('.btn-submit');
       btn.textContent = 'Sending...';
-      btn.disabled = true;
       setTimeout(() => {
         document.getElementById('formSuccess').style.display = 'block';
         this.reset();
-        btn.innerHTML = '<i class="fas fa-paper-plane"></i> &nbsp; Send Message';
-        btn.disabled = false;
+        btn.textContent = 'Send Message';
       }, 1500);
-    });
-
-    const sections   = document.querySelectorAll('section[id]');
-    const navAnchors = document.querySelectorAll('.nav-links a');
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
-      navAnchors.forEach(a => {
-        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : '';
-      });
     });
   </script>
 </body>
